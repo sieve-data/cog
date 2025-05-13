@@ -28,7 +28,6 @@ func Build(dir, dockerfile, imageUrl string, progressOutput string, writer io.Wr
 		"--tag", imageUrl,
 		"--tag", imageLatest,
 		"--progress", progressOutput,
-		"--platform", "linux/amd64",
 	)
 	for _, image := range cache_from_images {
 		args = append(args, "--cache-from", "type=registry,ref="+image)
